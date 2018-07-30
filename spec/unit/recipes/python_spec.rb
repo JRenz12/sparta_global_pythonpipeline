@@ -16,5 +16,9 @@ describe 'python::python' do
     it 'should install Python' do
       expect( chef_run ).to install_package 'python'
     end
+
+    it 'should install Pip' do
+      expect( chef_run ).to install_package 'python-pip'
+    end
   end
 end

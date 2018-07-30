@@ -11,8 +11,16 @@ describe 'python::default' do
     let(:chef_run) do
       # for a complete list of available platforms and versions see:
       # https://github.com/customink/fauxhai/blob/master/PLATFORMS.md
-      runner = ChefSpec::ServerRunner.new(platform: 'ubuntu', version: '16.04')
+      runner = ChefSpec::SoloRunner.new(platform: 'ubuntu', version: '16.04')
       runner.converge(described_recipe)
+    end
+
+    it 'should run apt-get update' do
+      expect( chef_run ).to update_apt_update 'update_sources'
+    end
+
+    it 'should run apt-get upgrade' do
+      expect( chef_run ).to upgrade_apt_upgrade 'upgrade_sources'
     end
 
     it 'converges successfully' do
