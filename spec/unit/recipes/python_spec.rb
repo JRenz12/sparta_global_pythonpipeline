@@ -20,5 +20,18 @@ describe 'python::python' do
     it 'should install Pip' do
       expect( chef_run ).to install_package 'python-pip'
     end
+
+    it 'should install libncurses5-dev' do
+      expect( chef_run ).to install_package 'libncurses5-dev'
+    end
+
+    it 'should install libncursesw5-dev' do
+      expect( chef_run ).to install_package 'libncursesw5-dev'
+    end
+    
+    it 'should install gnureadline' do
+      expect( chef_run ).to install_package 'gnureadline'
+    end
+
   end
 end

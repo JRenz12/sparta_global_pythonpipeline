@@ -19,10 +19,6 @@ describe 'python::default' do
       expect( chef_run ).to update_apt_update 'update_sources'
     end
 
-    it 'should run apt-get upgrade' do
-      expect( chef_run ).to upgrade_apt_upgrade 'upgrade_sources'
-    end
-
     it 'converges successfully' do
       expect { chef_run }.to_not raise_error
     end
