@@ -9,5 +9,3 @@ package 'python-pip'
 package 'libncurses5-dev'
 
 package 'libncursesw5-dev'
-
-package 'gnureadline'
